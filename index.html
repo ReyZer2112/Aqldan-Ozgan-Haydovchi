@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Aqldan Ozgan Haydovchi</title>
-    
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="en-us">
 
 <head>
@@ -28,6 +17,21 @@
       src: url(baloo2.woff) format('woff');
       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
     }
+
+/* Mobil qurilmalar uchun xabar oynasi */
+#mobile-message {
+    display: none; /* Odatiy holatda yashirin */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #121212;
+    color: white;
+    z-index: 10000;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'baloo 2', sans-serif;
+    padding: 20px;
+}
 
     .fullscreen {
       position: absolute;
@@ -463,6 +467,12 @@
     <div id="gradient"></div>
     <div id="webview_content"></div>
   </div>
+
+<div id="mobile-message">
+    <h1>Kechirasiz!</h1>
+    <p>Bu sayt sizning qurilmangizda ishlamaydi. Iltimos, kompyuterdan kiring.</p>
+</div>
+
   <script type="text/javascript">
     var pokiDebug = false;
     var postRunDone = false;
@@ -496,6 +506,24 @@
         return true;
       }
     }
+
+function checkDevice() {
+    // Mobil qurilmalarni aniqlash (oddiy usul)
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        // Agar mobil bo'lsa, o'yin interfeysini yashirish va xabarni ko'rsatish
+        document.getElementById('canvas_border').style.display = 'none';
+        var msgDiv = document.getElementById('mobile-message');
+        msgDiv.style.display = 'flex';
+        
+        // O'yin yuklanishini to'xtatish (ixtiyoriy)
+        window.stop(); 
+    }
+}
+
+// Sahifa yuklanganda tekshirishni ishga tushirish
+window.addEventListener('DOMContentLoaded', checkDevice);
 
     function updateLoadProgress() {
       let progressElement = document.getElementById('progress');
