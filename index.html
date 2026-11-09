@@ -534,14 +534,12 @@
             </svg>
 
             <div class="error-caption">404 ERROR</div>
-            <div class="error-description">Boyangidan yurishni bilmaydi</div>
           </div>
 
         </div>
 
 
       </div>
-      <h1 class="error-title">404</h1>
       <p class="error-text">Afsuski, bu haydovchi sizning qurilmangizda yurishni bilmaydi. Iltimos, o‘yinni kompyuterda
         oching.</p>
       <button onclick="location.reload()" class="large-btn">QAYTA TEKSHIRISH</button>
@@ -590,19 +588,6 @@
       filter: drop-shadow(0 0 15px rgba(255, 210, 0, .18));
     }
 
-
-
-    /* Sarlavhani telefon uchun katta qilish */
-    .error-title {
-      font-family: 'baloo 2', Arial, sans-serif;
-      font-size: 10vw;
-      /* Ekran kengligiga qarab o'zgaradi */
-      margin: 10px 0;
-      color: #55b949;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
     /* Matnni telefon uchun katta qilish */
     .error-text {
       font-size: 5vw;
@@ -632,9 +617,6 @@
 
     /* Planshet va kattaroq ekranlar uchun matn hajmini cheklash */
     @media (min-width: 600px) {
-      .error-title {
-        font-size: 50px;
-      }
 
       .error-text {
         font-size: 20px;
@@ -710,13 +692,6 @@
   color: #fff;
   line-height: 1.1;
   margin-top: 8px;
-}
-
-.error-description {
-  margin-top: 8px;
-  font-size: clamp(14px, 2vw, 19px);
-  color: #aaa;
-  font-weight: 600;
 }
 
 .wheel {
