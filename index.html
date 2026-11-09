@@ -1,10 +1,67 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en-us">
 
   <head>
-    <script src="https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.wasm.js"></script>
-    <script src="https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.data.js"></script>
-    <title>Aqldan Ozgan Haydovchi</title>
+    <script>
+(function () {
+    const isMobile = /Android|iPhone|iPad|iPod|Mobile|Tablet/i.test(navigator.userAgent)
+        || (navigator.maxTouchPoints > 1 && /MacIntel/.test(navigator.platform));
+
+    if (isMobile) {
+        document.open();
+        document.write(`
+            <!DOCTYPE html>
+            <html lang="uz">
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title>Aqldan Ozgan Haydovchi</title>
+                <style>
+                    body {
+                        margin: 0;
+                        min-height: 100vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: #111;
+                        color: white;
+                        font-family: Arial, sans-serif;
+                        text-align: center;
+                        padding: 20px;
+                        box-sizing: border-box;
+                    }
+                    .message {
+                        max-width: 420px;
+                        font-size: 20px;
+                        line-height: 1.6;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="message">
+                    Afsuski, bu haydovchi sizning qurilmangizda yurishni bilmaydi.
+                    Iltimos, o‘yinni kompyuterda oching.
+                </div>
+            </body>
+            </html>
+        `);
+        document.close();
+        return;
+    }
+
+    const scripts = [
+        "https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.wasm.js",
+        "https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.data.js"
+    ];
+
+    scripts.forEach(src => {
+        const script = document.createElement("script");
+        script.src = src;
+        script.async = false;
+        document.head.appendChild(script);
+    });
+})();
+</script>
+<title>Aqldan Ozgan Haydovchi</title>
   </head>
 
   <body id="body">
