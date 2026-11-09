@@ -443,85 +443,100 @@
 
 
         <div class="svg-container">
-          <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
 
-            <!-- Trassa -->
-            <rect x="55" y="45" width="490" height="270" rx="110" fill="none" stroke="#555b70" stroke-width="76" />
+          <div class="error-404">
+            <svg class="road-404" viewBox="0 0 900 390" xmlns="http://www.w3.org/2000/svg">
 
-            <rect x="55" y="45" width="490" height="270" rx="110" fill="none" stroke="#242735" stroke-width="68" />
+              <defs>
+                <path id="route" d="M 35 270
+           L 35 125 Q 35 65 95 65
+           L 155 65 Q 205 65 205 125
+           L 205 270
+           L 205 125 Q 205 65 265 65
+           L 325 65 Q 375 65 375 125
+           L 375 270
+           L 375 125 Q 375 65 435 65
+           L 495 65 Q 545 65 545 125
+           L 545 270
+           L 545 125 Q 545 65 605 65
+           L 665 65 Q 715 65 715 125
+           L 715 270
+           L 715 125 Q 715 65 775 65
+           L 835 65 Q 865 65 865 125
+           L 865 270" />
 
-            <!-- Yo'l chiziqlari -->
-            <rect x="55" y="45" width="490" height="270" rx="110" fill="none" stroke="#ffffff" stroke-width="3"
-              stroke-dasharray="17 19" opacity=".8" />
+                <path id="lane1" d="M 35 270 L 35 125 Q 35 65 95 65 L 155 65 Q 205 65 205 125 L 205 270
+           M 205 125 Q 205 65 265 65 L 325 65 Q 375 65 375 125 L 375 270
+           M 375 125 Q 375 65 435 65 L 495 65 Q 545 65 545 125 L 545 270
+           M 545 125 Q 545 65 605 65 L 665 65 Q 715 65 715 125 L 715 270
+           M 715 125 Q 715 65 775 65 L 835 65 Q 865 65 865 125 L 865 270" />
 
-            <!-- 404 -->
-            <text x="300" y="207" font-size="100" font-weight="1000" text-anchor="middle" fill="#ffffff"
-              opacity=".16">404</text>
+                <g id="truck">
+                  <!-- Shadow -->
+                  <ellipse cx="0" cy="17" rx="39" ry="7" fill="#000" opacity=".3" />
 
-            <!-- Aylanadigan Monster Truck -->
-            <g>
-              <g transform="translate(0 0)">
+                  <!-- Wheels -->
+                  <g class="wheel" transform="translate(-23 9)">
+                    <circle r="13" fill="#171717" stroke="#333" stroke-width="2" />
+                    <circle r="6" fill="#999" />
+                    <path d="M-9 0H9 M0-9V9 M-6-6L6 6 M6-6L-6 6" stroke="#555" stroke-width="2" />
+                  </g>
+                  <g class="wheel" transform="translate(24 9)">
+                    <circle r="13" fill="#171717" stroke="#333" stroke-width="2" />
+                    <circle r="6" fill="#999" />
+                    <path d="M-9 0H9 M0-9V9 M-6-6L6 6 M6-6L-6 6" stroke="#555" stroke-width="2" />
+                  </g>
 
-                <!-- Orqa g'ildirak -->
-                <circle cx="-37" cy="12" r="24" fill="#090b12" stroke="#35394b" stroke-width="7" />
-                <circle cx="-37" cy="12" r="12" fill="#777e94" />
-                <path d="M-37 -1 L-28 8 L-33 23 L-45 22 L-49 9Z" fill="#303447" />
+                  <!-- Body -->
+                  <path d="M-35 1 L-31-12 Q-29-17-21-17 H15
+                 Q23-17 28-9 L35 1 L31 8 H-32Z" fill="#f4c400" stroke="#9a7600" stroke-width="2" />
 
-                <!-- Old g'ildirak -->
-                <circle cx="37" cy="12" r="24" fill="#090b12" stroke="#35394b" stroke-width="7" />
-                <circle cx="37" cy="12" r="12" fill="#777e94" />
-                <path d="M37 -1 L46 8 L41 23 L29 22 L25 9Z" fill="#303447" />
+                  <!-- Cabin -->
+                  <path d="M-15-16 L-9-29 Q-7-32 0-32 H12
+                 Q18-32 21-25 L27-12 H-15Z" fill="#d5d9dc" stroke="#555" stroke-width="2" />
 
-                <!-- Kuzov -->
-                <path d="M-52 -20 L-42 -32 L28 -32
-               L53 -18 L53 3 L-52 3Z" fill="#ffcf00" />
+                  <!-- Windows -->
+                  <path d="M-7-28 L-2-30 H10 L15-18 H-12Z" fill="#4d6572" stroke="#333" stroke-width="1.5" />
 
-                <path d="M-52 -20 L-42 -32 L28 -32
-               L40 -22 L-45 -22Z" fill="#ffe94a" />
+                  <!-- Front bumper -->
+                  <path d="M28-4 L38-2 L38 5 L29 5Z" fill="#555" />
+                  <rect x="-36" y="-3" width="7" height="6" rx="2" fill="#eee" />
+                </g>
+              </defs>
 
-                <!-- Kabina -->
-                <path d="M-37 -32 L-34 -57 L-20 -70
-               L14 -70 L30 -54 L30 -32Z" fill="#d0d4df" />
+              <!-- 404 road -->
+              <use href="#route" fill="none" stroke="#242424" stroke-width="66" stroke-linejoin="round"
+                stroke-linecap="round" />
 
-                <!-- Kabina tomi -->
-                <path d="M-34 -57 L-20 -70 L14 -70
-               L30 -54 L-8 -54Z" fill="#eef0f5" />
+              <!-- Two lanes -->
+              <use href="#route" fill="none" stroke="#777" stroke-width="3" stroke-dasharray="12 12"
+                stroke-linejoin="round" stroke-linecap="round" />
 
-                <!-- Oyna -->
-                <path d="M-29 -54 L-19 -65 L-6 -65
-               L-6 -38 L-29 -38Z" fill="#303449" />
+              <!-- Outer road edges -->
+              <use href="#route" fill="none" stroke="#f5f5f5" stroke-width="2" opacity=".8" stroke-linejoin="round"
+                stroke-linecap="round" />
 
-                <!-- Old oyna -->
-                <path d="M0 -65 L13 -65 L24 -53
-               L24 -38 L0 -38Z" fill="#252a3d" />
-
-                <!-- Kapot -->
-                <path d="M30 -32 L53 -18 L53 -5
-               L30 -8Z" fill="#e7aa00" />
-
-                <path d="M32 -28 L52 -16" stroke="#fff064" stroke-width="4" />
-
-                <!-- Far -->
-                <rect x="48" y="-17" width="6" height="8" rx="2" fill="#fff7bf" />
-
-                <!-- Bamper -->
-                <path d="M-52 -7 L-59 -3 L-59 5
-               L-40 5 L-40 -7Z" fill="#74798b" />
-
+              <!-- Truck moving forward -->
+              <g>
+                <animateMotion dur="13s" repeatCount="indefinite" rotate="auto" calcMode="paced">
+                  <mpath href="#route" />
+                </animateMotion>
+                <use href="#truck" />
               </g>
 
-              <!-- Trassa bo'ylab harakat -->
-              <animateMotion dur="12s" repeatCount="indefinite" rotate="auto" path="M165 45 H435
-            Q545 45 545 155
-            V205
-            Q545 315 435 315
-            H165
-            Q55 315 55 205
-            V155
-            Q55 45 165 45 Z" />
-            </g>
+              <!-- Truck returning on second lane -->
+              <g>
+                <animateMotion dur="13s" begin="13s" repeatCount="indefinite" rotate="auto" calcMode="paced">
+                  <mpath href="#route" />
+                </animateMotion>
+                <use href="#truck" />
+              </g>
+            </svg>
 
-          </svg>
+            <div class="error-caption">404 ERROR</div>
+            <div class="error-description">Boyangidan yurishni bilmaydi</div>
+          </div>
+
         </div>
 
 
@@ -670,6 +685,62 @@
       border-radius: 20px;
       font-weight: bold;
     }
+
+    
+.error-404 {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.road-404 {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,.25));
+}
+
+.error-caption {
+  font-size: clamp(38px, 7vw, 66px);
+  font-weight: 900;
+  letter-spacing: 5px;
+  color: #fff;
+  line-height: 1.1;
+  margin-top: 8px;
+}
+
+.error-description {
+  margin-top: 8px;
+  font-size: clamp(14px, 2vw, 19px);
+  color: #aaa;
+  font-weight: 600;
+}
+
+.wheel {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: wheel-spin .35s linear infinite;
+}
+
+@keyframes wheel-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+  .error-404 {
+    max-width: 100%;
+  }
+
+  .road-404 {
+    width: 115%;
+    max-width: none;
+    margin-left: -7.5%;
+  }
+}
+
   </style>
 
   <div id="modal_parent">
